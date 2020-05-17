@@ -20,6 +20,7 @@ class SignIn extends Component {
             await auth.signInWithEmailAndPassword(email,password)
             this.setState({ email:"",password:""})
         } catch (error) {
+            alert("wrong username and password")
             console.log(error)
         }
         // await auth.signInWithEmailAndPassword(email,password)
@@ -47,12 +48,14 @@ class SignIn extends Component {
                     <FormInput type="email"
                     name="email" 
                     value={this.state.email}
-                    label="email" 
+                    label="email"
+                    placeholder="kumar@gmail.com" 
                     handleChange={this.handleChange}
                     required/>
                     <FormInput type="password" 
                     name="password"
                     value={this.state.password}
+                    placeholder="121212"
                     label="password"
                     handleChange={this.handleChange} 
                     required />
