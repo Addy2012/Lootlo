@@ -8,8 +8,8 @@ class SignIn extends Component {
     constructor(props){
         super(props)
         this.state={
-            email:"",
-            password:""
+            email:"kumar@gmail.com",
+            password:"121212"
         }
     }
     handleSubmit=async event=>{
@@ -48,14 +48,12 @@ class SignIn extends Component {
                     <FormInput type="email"
                     name="email" 
                     value={this.state.email}
-                    label="email"
-                    placeholder="kumar@gmail.com" 
+                    label="email" 
                     handleChange={this.handleChange}
                     required/>
                     <FormInput type="password" 
                     name="password"
                     value={this.state.password}
-                    placeholder="121212"
                     label="password"
                     handleChange={this.handleChange} 
                     required />
