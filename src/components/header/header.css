@@ -21,3 +21,7 @@
     padding: 10px 15px;
     cursor: pointer;
   }
+
+  .header .options .option:hover {
+    background-color: gainsboro;
+  }

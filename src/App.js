@@ -8,10 +8,12 @@ import Header from './components/header/header';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up';
 import { auth , createUserProfileDocument } from './firebase/firebase.util';
 import { setCurrentUser } from './redux/user/user.actions';
+import { selectCurrentUser } from './redux/user/user-selectors';
+import { createStructuredSelector } from 'reselect';
+import CheckoutPage from './pages/checkout/checkout';
 
 class App extends Component {
   // unSubscribeFromAuth=null
-
   componentDidMount(){
     const {setCurrentUser} = this.props;
     this.unSubscribeFromAuth=auth.onAuthStateChanged(async userAuth =>{ 
@@ -42,14 +44,15 @@ class App extends Component {
       <Switch>
         <Route exact path='/' component= {Homepage}/>
         <Route path='/shop' component={ShopPage}/>
-        <Route path='/signinsignup' render={()=> this.props.currentUser ? <Redirect to='/'/> : (<SignInAndSignUpPage/>) }  />
+        <Route exxact path="/checkout" component={CheckoutPage}/>
+        <Route exact path='/signinsignup' render={()=> this.props.currentUser ? <Redirect to='/'/> : (<SignInAndSignUpPage/>) }  />
       </Switch>
     </div>
   )}
 }
 
-const mapStateToProps= ({ user }) => ({
-  currentUser : user.currentUser
+const mapStateToProps = createStructuredSelector ({
+  currentUser : selectCurrentUser
 })
 
 const mapDispatchToProps = dispatch => ({
