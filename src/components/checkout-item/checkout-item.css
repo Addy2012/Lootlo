@@ -20,6 +20,24 @@
 }
 .checkout-item .quantity {
     padding-left: 20px;
+    display: flex;
+}
+.checkout-item .quantity .leftArrow{
+    cursor: pointer;
+}
+.checkout-item .quantity .leftArrow:active{
+    color:red;
+    transform: translateY(4px);
+}
+.checkout-item .quantity .rightArrow{
+    cursor: pointer;
+}
+.checkout-item .quantity .rightArrow:active{
+    color: green;
+    transform: translateY(4px);
+}
+.checkout-item .quantity .value{
+    margin: 0 10px;
 }
 .checkout-item .remove-button {
     padding-left: 12px;

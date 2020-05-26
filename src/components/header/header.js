@@ -12,7 +12,6 @@ import { selectCurrentUser } from '../../redux/user/user-selectors';
 
 const Header = ({ currentUser , hidden }) => (
     <div className="header">
-        {console.log("htis is "+currentUser)}
         <Link className="logo-container" to='/'>
             <Logo className='logo'/>
         </Link>
