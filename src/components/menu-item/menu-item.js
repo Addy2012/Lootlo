@@ -2,8 +2,9 @@ import React from 'react';
 import './menu-item.css';
 import {withRouter} from 'react-router-dom';
 
-const MenuItem = ({imageUrl,title, size,history, linkUrl,match}) => (
-        
+const MenuItem = ({imageUrl,title, size,history, linkUrl,match}) => 
+{
+    return(
         <div 
             className={`${size} menu-item`}
             onClick={() => history.push(`${match.url}${linkUrl}`)}>
@@ -18,5 +19,7 @@ const MenuItem = ({imageUrl,title, size,history, linkUrl,match}) => (
             </div>
         </div>
     )
+
+}
 
 export default withRouter(MenuItem);

@@ -40,7 +40,7 @@ class App extends Component {
   render(){
   return (
     <div>
-      <Header />
+      <Header/>
       <Switch>
         <Route exact path='/' component= {Homepage}/>
         <Route path='/shop' component={ShopPage}/>
@@ -56,8 +56,9 @@ const mapStateToProps = createStructuredSelector ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user))
+  setCurrentUser: user => dispatch(setCurrentUser(user)),
 });
+
 
 export default connect(
   mapStateToProps,
