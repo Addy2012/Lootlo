@@ -38,11 +38,12 @@ class App extends Component {
 
 
   render(){
+
   return (
     <div>
       <Header/>
       <Switch>
-        <Route exact path='/' component= {Homepage}/>
+        <Route exact path='/' component={Homepage}/>
         <Route path='/shop' component={ShopPage}/>
         <Route exxact path="/checkout" component={CheckoutPage}/>
         <Route exact path='/signinsignup' render={()=> this.props.currentUser ? <Redirect to='/'/> : (<SignInAndSignUpPage/>) }  />

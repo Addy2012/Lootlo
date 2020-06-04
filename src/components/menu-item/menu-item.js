@@ -14,12 +14,11 @@ const MenuItem = ({imageUrl,title, size,history, linkUrl,match}) =>
                 }}
             />
             <div className='content' >
-                <div className='title'>{title}</div>
+                <div className='title'>{title.toUpperCase()}</div>
                 <span className='subtitle'>SHOP NOW</span>
             </div>
         </div>
     )
-
 }
 
 export default withRouter(MenuItem);
