@@ -6,11 +6,12 @@ import { Route , Switch , Redirect} from 'react-router-dom';
 import ShopPage from './pages/shop/shop';
 import Header from './components/header/header';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up';
-import { auth , createUserProfileDocument } from './firebase/firebase.util';
+import { auth, createUserProfileDocument } from './firebase/firebase.util';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user-selectors';
 import { createStructuredSelector } from 'reselect';
 import CheckoutPage from './pages/checkout/checkout';
+// import { selectCollectionsForPreview } from './redux/shop/shopSelector'
 
 class App extends Component {
   // unSubscribeFromAuth=null
@@ -27,7 +28,8 @@ class App extends Component {
         });
       }
 
-      setCurrentUser(userAuth);    
+      setCurrentUser(userAuth);
+      // addCollectionAndItems('collections',collectionsArray.map(({title, items}) => ({title, items})) );    
     });
   }
 
@@ -53,7 +55,8 @@ class App extends Component {
 }
 
 const mapStateToProps = createStructuredSelector ({
-  currentUser : selectCurrentUser
+  currentUser : selectCurrentUser,
+  // collectionsArray : selectCollectionsForPreview
 })
 
 const mapDispatchToProps = dispatch => ({
